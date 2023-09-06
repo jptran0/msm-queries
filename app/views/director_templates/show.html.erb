@@ -1,4 +1,4 @@
-<h1>Director #<%= @director_id %> details</h1>
+<h1>Director #<%= @director.id %> details</h1>
 <a href="/directors">Go back</a>
 
 <hr>
@@ -24,3 +24,27 @@
 </dl>
 
 <hr>
+
+<h2>Filmography</h2>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Director</th>
+    <th></th>
+  </tr>
+
+  <% @matching_movies.each do |movie| %>
+    <tr>
+      <td><%= movie.id %></td>
+      <td><img src="<%= movie.image %>" width="250"></td>
+      <td><%= movie.title %></td>
+      <td><%= movie.year %></td>
+      <td><%= @director.name %></td>
+      <td><a href="">Show details</a></td>
+    </tr>
+  <% end %>
+</table>
