@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   def show
     movie_id = params.fetch("id")
 
-    @movie = Movie.where({ id: movie_id })
+    @movie = Movie.where({ id: movie_id }).first
 
     render template: "movie_templates/show"
   end
